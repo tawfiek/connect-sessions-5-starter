@@ -1,0 +1,23 @@
+{
+  "compilerOptions": {
+    "types": [
+      "jasmine",
+      "node"
+    ],
+    "typeRoots": ["node_modules/@types"],
+    "target": "es6",
+    "module": "commonjs",
+    "outDir": "dist",
+    "sourceMap": true
+  },
+  "include": [
+    "src/**/*.ts"
+  ],
+  "exclude": [
+    "node_modules",
+    // "src/tests"
+  ],
+  "resolveJsonModule": true,
+  "allowSyntheticDefaultImports": true,
+  "esModuleInterop": true
+}
