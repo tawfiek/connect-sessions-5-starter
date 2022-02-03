@@ -1,5 +1,8 @@
-import { NextFunction, Request, Response } from "express";
+// TODO: Implement controller for list students endpoint.
 
-export function listStudentsNames  (req: Request, res: Response, next:NextFunction) {
-    
-}
+// TODO: Implement controller for get student by id endpoint.
+
+//TODO: Implement controller for create student endpoint.
+
+//TODO: Implement controller for update student endpoint.
+
