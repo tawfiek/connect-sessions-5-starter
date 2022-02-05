@@ -1,11 +1,12 @@
 import { Router } from 'express';
+import { createStudent, getAllStudents} from '../../controllers/students';
+import { studentValidation } from '../../middlewares/student-validation';
+
 const router = Router();
 
-// TODO: POST route controller and validation middleware
-router.post('/');
+router.post('/', studentValidation, createStudent);
 
-// TODO: GET route controller and validation middleware
-router.get('/');
+router.get('/', getAllStudents);
 
 // TODO: GET route controller and validation middleware
 router.get('/:id');
