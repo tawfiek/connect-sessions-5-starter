@@ -1,4 +1,7 @@
 import { Pool } from 'pg';
+import * as dotenv from 'dotenv'
+
+dotenv.config()
 
 const {
     POSTGRES_LOCATION,
@@ -6,7 +9,7 @@ const {
     POSTGRES_PASSWORD,
     POSTGRES_NAME,
     ENV,
-    POSTGRES_NAME_TEST
+    POSTGRES_NAME_TEST,
 } = process.env;
 
 const db = new Pool({

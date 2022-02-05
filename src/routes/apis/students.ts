@@ -1,16 +1,21 @@
 import { Router } from 'express';
 const router = Router();
+import * as studentsRoutes from '../../controllers/students';
+import validate from '../../middlewares/student-validation';
 
-// TODO: POST route controller and validation middleware
-router.post('/');
+// POST route to add new student
+router.post('/', validate, studentsRoutes.addStudent);// in my opinion the only endpoint that needs validation
 
-// TODO: GET route controller and validation middleware
-router.get('/');
+// GET route to show all students' data
+router.get('/', studentsRoutes.showStudents);
 
-// TODO: GET route controller and validation middleware
-router.get('/:id');
+// GET route to show student's data with specific id 
+router.get('/:id', studentsRoutes.showStudent);
 
-//TODO: GET route controller and validation middleware
-router.put('/');
+// Put route to update student's data
+router.put('/' , studentsRoutes.updateStudent);
+
+// Delete route to delete student's data
+router.delete('/:id', studentsRoutes.deleteStudent);
 
 export default router;

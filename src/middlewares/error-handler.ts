@@ -1,4 +1,4 @@
-import { NextFunction, Request, Response } from "express";
+import { NextFunction, Request, Response } from 'express';
 
 export default function errorHandler(
     err: Error,
@@ -8,4 +8,5 @@ export default function errorHandler(
 ) {
     console.error(err);
     return res.status(500).json({ message: 'Something went wrong!' });
+    next()
 }
