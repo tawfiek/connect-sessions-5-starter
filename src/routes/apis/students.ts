@@ -1,6 +1,6 @@
 import { Router } from 'express';
-import { createStudent, getAllStudents} from '../../controllers/students';
-import { studentValidation } from '../../middlewares/student-validation';
+import { createStudent, getAllStudents, getStudent, updateStudent} from '../../controllers/students';
+import { studentValidation, validateStudentID } from '../../middlewares/student-validation';
 
 const router = Router();
 
@@ -8,10 +8,8 @@ router.post('/', studentValidation, createStudent);
 
 router.get('/', getAllStudents);
 
-// TODO: GET route controller and validation middleware
-router.get('/:id');
+router.get('/:id', validateStudentID, getStudent);
 
-//TODO: GET route controller and validation middleware
-router.put('/');
+router.put('/:id', validateStudentID, studentValidation, updateStudent);
 
 export default router;

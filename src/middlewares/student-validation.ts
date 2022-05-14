@@ -17,3 +17,14 @@ export function studentValidation(req: Request, res: Response, next: NextFunctio
     }
 
 }
+
+export function validateStudentID (req: Request, res: Response, next: NextFunction) {
+    const {id} = req.params;
+
+    if (isNaN(+id)) {
+        return res.status(400).json({
+            message: 'ID must be a number.' });
+    } else {
+        next();
+    }
+}
